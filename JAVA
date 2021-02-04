@@ -1,0 +1,53 @@
+package gradecalculatorapp;
+
+/**
+ *
+ * @author Prerna
+ */
+import java.util.Scanner;
+public class GradeCalculatorApp {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        //welcoming the user
+        System.out.println("Wecome to the Letter Grade Converter");
+        System.out.println();//print a blank line
+        
+        Scanner sc = new Scanner(System.in);
+        
+        //perform conversions until choice is value other than "y" or "Y"
+        String choice = "y";
+        while(choice.equalsIgnoreCase("y"))
+        {
+        //get input from the user
+        System.out.print("Enter numerical grade: ");
+        double points=sc.nextDouble();
+        
+        //Convert user grade into letter grade
+        char userGrade ='F';
+        if(points>=88)
+        userGrade = 'A';
+        else if(points>=80)
+        userGrade = 'B';
+        else if(points>=67)
+        userGrade = 'C';
+        else if(points>=60)
+        userGrade ='D';
+        
+        //display conversion result
+        String message = "Letter Grade:\t" + userGrade;
+        System.out.println(message);
+        
+        //see if user wants to continue
+        System.out.print("\nContinue?(y/n):\t");
+        choice = sc.next();
+        System.out.println();
+        }
+        
+        
+        
+    }
+    
+}
